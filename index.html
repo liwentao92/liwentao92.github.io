@@ -73,13 +73,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
+						<li>菜单</li>
 						<li>标签</li>
 						
-						<li>Links</li>
+						<li>友情链接</li>
 						
 						
-						<li>关于</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/rxandroid/" style="font-size: 10px;">rxandroid</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a>
 					</div>
 				</section>
 				
@@ -201,6 +201,96 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-RX-Android学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/21/RX-Android学习/" class="article-date">
+  	<time datetime="2016-03-21T14:07:03.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/RX-Android学习/">RX Android学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。</p>
+<p>##RxJava是个什么库：<br>通俗的说是一个实现异步操作的库。</p>
+<p>##AsyncTask的缺点：<br>对于android开发者来说异步并不陌生，因为android为我们提供了 AsyncTask 和Handler这两个类来处理异步操作。不过目前的异步编程方式都会导致一些问题。</p>
+<p>1、生命周期</p>
+<pre><code>很多开发者会认为一个在Activity中创建的AsyncTask会随着Activity的销毁而销毁。然而事实并非如此。AsyncTask会一直执行, 直到doInBackground()方法执行完毕。然后，如果 cancel(boolean)被调用, 那么onCancelled(Result result) 方法会被执行；否则，执行onPostExecute(Result result) 方法。如果我们的Activity销毁之前，没有取消 AsyncTask，这有可能让我们的AsyncTask崩溃(crash)。因为它想要处理的view已经不存在了。所以，我们总是必须确保在销毁活动之前取消任务。总之，我们使用AsyncTask需要确保AsyncTask正确地取消。
+
+另外，即使我们正确地调用了cancle() 也未必能真正地取消任务。因为如果在doInBackgroud里有一个不可中断的操作，比如BitmapFactory.decodeStream()，那么这个操作会继续下去。
+</code></pre><p>2、内存泄漏</p>
+<pre><code>如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用。如果Activity已经被销毁，AsyncTask的后台线程还在执行，它将继续在内存里保留这个引用，导致Activity无法被回收，引起内存泄露。
+</code></pre><p>3、结果丢失</p>
+<pre><code>屏幕旋转或Activity在后台被系统杀掉等情况会导致Activity的重新创建，之前运行的AsyncTask会持有一个之前Activity的引用，这个引用已经无效，这时调用onPostExecute()再去更新界面将不再生效。
+</code></pre><p>4、并行还是串行</p>
+<pre><code>在Android 1.6之前的版本，AsyncTask是串行的，在1.6至2.3的版本，改成了并行的。在2.3之后的版本又做了修改，可以支持并行和串行，当想要串行执行时，直接执行execute()方法，如果需要并行执行，则要执行executeOnExecutor(Executor)。
+</code></pre><p>##Thread的缺点：<br>在单个后台异步处理时，显得代码过多，结构过于复杂（相对性）</p>
+<p>##RxJava的优点：<br>RxJava的编写采用的是一种使用响应式编程，它可以更好的处理内存泄露问题, 代码可读性强，代码更简洁, 选择执行线程和监听线程也更加方便. 在destroy时, 还可以关闭正在执行的异步任务。</p>
+<p>##RxJava在Android studio中如何调用：<br>配置<br>新建一个Test程序. 配置build.gradle, 添加RxAndroid库和Lamada表达式支持, 还有ButterKnife.</p>
+<pre><code>plugins {
+    id &quot;me.tatarka.retrolambda&quot; version &quot;3.2.2&quot;
+}
+
+android {
+    compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+                   }
+        }
+
+dependencies {
+
+compile &apos;com.jakewharton:butterknife:7.0.1&apos;
+compile &apos;io.reactivex:rxandroid:1.0.1&apos;
+             }
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxandroid/">rxandroid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjava/">rxjava</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+ 
+
   
     <article id="post-Android学习网站" class="article article-type-post" itemscope itemprop="blogPost">
   
