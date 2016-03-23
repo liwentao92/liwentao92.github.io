@@ -7,21 +7,21 @@
   <title>RX Android学习 | Zero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。
-##RxJava是个什么库：通俗的说是一个实现异步操作的库。
-##AsyncTask的缺点：对于an">
+RxJava是个什么库：通俗的说是一个实现异步操作的库。
+AsyncTask的缺点：对于androi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RX Android学习">
 <meta property="og:url" content="http://yoursite.com/2016/03/21/RX-Android学习/index.html">
 <meta property="og:site_name" content="Zero">
 <meta property="og:description" content="首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。
-##RxJava是个什么库：通俗的说是一个实现异步操作的库。
-##AsyncTask的缺点：对于an">
-<meta property="og:updated_time" content="2016-03-21T15:12:46.173Z">
+RxJava是个什么库：通俗的说是一个实现异步操作的库。
+AsyncTask的缺点：对于androi">
+<meta property="og:updated_time" content="2016-03-23T13:41:33.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RX Android学习">
 <meta name="twitter:description" content="首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。
-##RxJava是个什么库：通俗的说是一个实现异步操作的库。
-##AsyncTask的缺点：对于an">
+RxJava是个什么库：通俗的说是一个实现异步操作的库。
+AsyncTask的缺点：对于androi">
   
     <link rel="alternative" href="/atom.xml" title="Zero" type="application/atom+xml">
   
@@ -80,13 +80,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
+						<li>菜单</li>
+						<li>标签</li>
 						
-						<li>Links</li>
+						<li>链接</li>
 						
 						
-						<li>About</li>
+						<li>关于</li>
 						
 					</ul>
 				</div>
@@ -245,8 +245,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。</p>
-<p>##RxJava是个什么库：<br>通俗的说是一个实现异步操作的库。</p>
-<p>##AsyncTask的缺点：<br>对于android开发者来说异步并不陌生，因为android为我们提供了 AsyncTask 和Handler这两个类来处理异步操作。不过目前的异步编程方式都会导致一些问题。</p>
+<h2 id="RxJava是个什么库："><a href="#RxJava是个什么库：" class="headerlink" title="RxJava是个什么库："></a>RxJava是个什么库：</h2><p>通俗的说是一个实现异步操作的库。</p>
+<h2 id="AsyncTask的缺点："><a href="#AsyncTask的缺点：" class="headerlink" title="AsyncTask的缺点："></a>AsyncTask的缺点：</h2><p>对于android开发者来说异步并不陌生，因为android为我们提供了 AsyncTask 和Handler这两个类来处理异步操作。不过目前的异步编程方式都会导致一些问题。</p>
 <p>1、生命周期</p>
 <pre><code>很多开发者会认为一个在Activity中创建的AsyncTask会随着Activity的销毁而销毁。然而事实并非如此。AsyncTask会一直执行, 直到doInBackground()方法执行完毕。然后，如果 cancel(boolean)被调用, 那么onCancelled(Result result) 方法会被执行；否则，执行onPostExecute(Result result) 方法。如果我们的Activity销毁之前，没有取消 AsyncTask，这有可能让我们的AsyncTask崩溃(crash)。因为它想要处理的view已经不存在了。所以，我们总是必须确保在销毁活动之前取消任务。总之，我们使用AsyncTask需要确保AsyncTask正确地取消。
 
@@ -257,9 +257,9 @@
 <pre><code>屏幕旋转或Activity在后台被系统杀掉等情况会导致Activity的重新创建，之前运行的AsyncTask会持有一个之前Activity的引用，这个引用已经无效，这时调用onPostExecute()再去更新界面将不再生效。
 </code></pre><p>4、并行还是串行</p>
 <pre><code>在Android 1.6之前的版本，AsyncTask是串行的，在1.6至2.3的版本，改成了并行的。在2.3之后的版本又做了修改，可以支持并行和串行，当想要串行执行时，直接执行execute()方法，如果需要并行执行，则要执行executeOnExecutor(Executor)。
-</code></pre><p>##Thread的缺点：<br>在单个后台异步处理时，显得代码过多，结构过于复杂（相对性）</p>
-<p>##RxJava的优点：<br>RxJava的编写采用的是一种使用响应式编程，它可以更好的处理内存泄露问题, 代码可读性强，代码更简洁, 选择执行线程和监听线程也更加方便. 在destroy时, 还可以关闭正在执行的异步任务。</p>
-<p>##RxJava在Android studio中如何调用：<br>配置<br>新建一个Test程序. 配置build.gradle, 添加RxAndroid库和Lamada表达式支持, 还有ButterKnife.</p>
+</code></pre><h2 id="Thread的缺点："><a href="#Thread的缺点：" class="headerlink" title="Thread的缺点："></a>Thread的缺点：</h2><p>在单个后台异步处理时，显得代码过多，结构过于复杂（相对性）<br><a id="more"></a></p>
+<h2 id="RxJava的优点："><a href="#RxJava的优点：" class="headerlink" title="RxJava的优点："></a>RxJava的优点：</h2><p>RxJava的编写采用的是一种使用响应式编程，它可以更好的处理内存泄露问题, 代码可读性强，代码更简洁, 选择执行线程和监听线程也更加方便. 在destroy时, 还可以关闭正在执行的异步任务。</p>
+<h2 id="RxJava在Android-studio中如何调用："><a href="#RxJava在Android-studio中如何调用：" class="headerlink" title="RxJava在Android studio中如何调用："></a>RxJava在Android studio中如何调用：</h2><p>配置<br>新建一个Test程序. 配置build.gradle, 添加RxAndroid库和Lamada表达式支持, 还有ButterKnife.</p>
 <pre><code>plugins {
     id &quot;me.tatarka.retrolambda&quot; version &quot;3.2.2&quot;
 }
