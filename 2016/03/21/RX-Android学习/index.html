@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/21/RX-Android学习/index.html">
 <meta property="og:site_name" content="Zero">
 <meta property="og:description" content="首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。">
-<meta property="og:updated_time" content="2016-03-23T14:06:19.861Z">
+<meta property="og:updated_time" content="2016-03-23T14:07:20.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RX Android学习">
 <meta name="twitter:description" content="首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。">
@@ -271,8 +271,10 @@ compile &apos;com.jakewharton:butterknife:7.0.1&apos;
 compile &apos;io.reactivex:rxandroid:1.1.2&apos;
 compile &apos;io.reactivex:rxjava:1.1.2&apos;
              }
+
+Lambda表达式支持不是必须的, 可以让你代码更加简洁, 减少匿名类的出现.（Lambda表达式貌似要写在apply plugin: &apos;com.android.application&apos;上面，不然又可能有错误）
 </code></pre><blockquote>
-<p>Lambda表达式支持不是必须的, 可以让你代码更加简洁, 减少匿名类的出现.（Lambda表达式貌似要写在apply plugin: ‘com.android.application’上面，不然又可能有错误）<br>附录<br><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a><br><a href="http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/" target="_blank" rel="external">使用 RxAndroid 处理异步任务</a><br><a href="http://blog.csdn.net/goodlixueyong/article/details/45895997" target="_blank" rel="external">AsyncTask的缺陷和问题</a></p>
+<p>附录<br><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a><br><a href="http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/" target="_blank" rel="external">使用 RxAndroid 处理异步任务</a><br><a href="http://blog.csdn.net/goodlixueyong/article/details/45895997" target="_blank" rel="external">AsyncTask的缺陷和问题</a></p>
 </blockquote>
 
       
