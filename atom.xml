@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-23T14:07:20.429Z</updated>
+  <updated>2016-03-23T14:57:32.307Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android修改EditText下划线线颜色</title>
+    <link href="http://yoursite.com/2016/03/23/Android%E4%BF%AE%E6%94%B9EditText%E4%B8%8B%E5%88%92%E7%BA%BF%E7%BA%BF%E9%A2%9C%E8%89%B2/"/>
+    <id>http://yoursite.com/2016/03/23/Android修改EditText下划线线颜色/</id>
+    <published>2016-03-23T14:26:36.000Z</published>
+    <updated>2016-03-23T14:57:32.307Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;利用xml-画线&quot;&gt;&lt;a href=&quot;#利用xml-画线&quot; class=&quot;headerlink&quot; title=&quot;利用xml 画线&quot;&gt;&lt;/a&gt;利用xml 画线&lt;/h2&gt;&lt;h4 id=&quot;首先，将edittext-去除边框&quot;&gt;&lt;a href=&quot;#首先，将edittext-去除边框&quot; class=&quot;headerlink&quot; title=&quot;首先，将edittext 去除边框&quot;&gt;&lt;/a&gt;首先，将edittext 去除边框&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;android:background=”@null”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个代码可以去掉 edittext 的边框&lt;/p&gt;
+&lt;h4 id=&quot;然后，edittext-底部加线&quot;&gt;&lt;a href=&quot;#然后，edittext-底部加线&quot; class=&quot;headerlink&quot; title=&quot;然后，edittext 底部加线&quot;&gt;&lt;/a&gt;然后，edittext 底部加线&lt;/h4&gt;&lt;p&gt;在drawable 新建一个 line.xml&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; android:shape=&quot;rectangle&quot; &amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;lt;solid android:color=&quot;@color/orange_normal&quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;lt;size&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  android:height=&quot;1dp&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  android:width=&quot;1000dp&quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/shape&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;最后，在layout-的布局文件中引用&quot;&gt;&lt;a href=&quot;#最后，在layout-的布局文件中引用&quot; class=&quot;headerlink&quot; title=&quot;最后，在layout 的布局文件中引用&quot;&gt;&lt;/a&gt;最后，在layout 的布局文件中引用&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&amp;lt;EditText
+ android:id=&lt;span class=&quot;string&quot;&gt;&quot;@+id/phone&quot;&lt;/span&gt;
+ android:layout_width=&lt;span class=&quot;string&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+ android:layout_height=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+ android:background=&lt;span class=&quot;string&quot;&gt;&quot;@null&quot;&lt;/span&gt;
+ android:drawableBottom=&lt;span class=&quot;string&quot;&gt;&quot;@drawable/line&quot;&lt;/span&gt;
+ android:hint=&lt;span class=&quot;string&quot;&gt;&quot;@string/phone_hint&quot;&lt;/span&gt;
+ android:inputType=&lt;span class=&quot;string&quot;&gt;&quot;phone&quot;&lt;/span&gt;
+ android:maxLength=&lt;span class=&quot;string&quot;&gt;&quot;11&quot;&lt;/span&gt;
+ android:maxLines=&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;利用xml-画线&quot;&gt;&lt;a href=&quot;#利用xml-画线&quot; class=&quot;headerlink&quot; title=&quot;利用xml 画线&quot;&gt;&lt;/a&gt;利用xml 画线&lt;/h2&gt;&lt;h4 id=&quot;首先，将edittext-去除边框&quot;&gt;&lt;a href=&quot;#首先，将edittext
+    
+    </summary>
+    
+    
+      <category term="EditText" scheme="http://yoursite.com/tags/EditText/"/>
+    
+  </entry>
+  
+  <entry>
     <title>RX Android学习</title>
     <link href="http://yoursite.com/2016/03/21/RX-Android%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2016/03/21/RX-Android学习/</id>
     <published>2016-03-21T14:07:03.000Z</published>
-    <updated>2016-03-23T14:07:20.429Z</updated>
+    <updated>2016-03-23T14:57:32.305Z</updated>
     
     <content type="html">&lt;p&gt;首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;RxJava是个什么库：&quot;&gt;&lt;a href=&quot;#RxJava是个什么库：&quot; class=&quot;headerlink&quot; title=&quot;RxJava是个什么库：&quot;&gt;&lt;/a&gt;RxJava是个什么库：&lt;/h2&gt;&lt;p&gt;通俗的说是一个实现异步操作的库。&lt;/p&gt;
@@ -55,9 +91,8 @@ compile &amp;apos;com.jakewharton:butterknife:7.0.1&amp;apos;
 compile &amp;apos;io.reactivex:rxandroid:1.1.2&amp;apos;
 compile &amp;apos;io.reactivex:rxjava:1.1.2&amp;apos;
              }
-
-Lambda表达式支持不是必须的, 可以让你代码更加简洁, 减少匿名类的出现.（Lambda表达式貌似要写在apply plugin: &amp;apos;com.android.application&amp;apos;上面，不然又可能有错误）
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Lambda表达式支持不是必须的, 可以让你代码更加简洁, 减少匿名类的出现.（Lambda表达式貌似要写在apply plugin: ‘com.android.application’上面，不然又可能有错误）&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;附录&lt;br&gt;&lt;a href=&quot;https://gank.io/post/560e15be2dca930e00da1083&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;给 Android 开发者的 RxJava 详解&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用 RxAndroid 处理异步任务&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/goodlixueyong/article/details/45895997&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AsyncTask的缺陷和问题&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
