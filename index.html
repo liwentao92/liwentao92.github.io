@@ -73,13 +73,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
+						<li>Menu</li>
+						<li>Tags</li>
 						
-						<li>链接</li>
+						<li>Links</li>
 						
 						
-						<li>关于</li>
+						<li>A propos</li>
 						
 					</ul>
 				</div>
@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/EditText/" style="font-size: 10px;">EditText</a> <a href="/tags/rxandroid/" style="font-size: 10px;">rxandroid</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a>
+						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/EditText/" style="font-size: 10px;">EditText</a> <a href="/tags/rxandroid/" style="font-size: 10px;">rxandroid</a> <a href="/tags/rxjava/" style="font-size: 10px;">rxjava</a>
 					</div>
 				</section>
 				
@@ -201,6 +201,132 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Android开发心得整理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/27/Android开发心得整理/" class="article-date">
+  	<time datetime="2016-03-27T03:30:14.000Z" itemprop="datePublished">2016-03-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/27/Android开发心得整理/">Android开发心得整理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a href="https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9" target="_blank" rel="external">https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9</a></p>
+<p>在开发了几个项目之后我决定写篇文章分享一下一路走来的经验教训。</p>
+<ul>
+<li><p>在使用任何第三方库之前都要三思，这件事非常严肃。</p>
+</li>
+<li><p>除非必须，不要使用数据库。</p>
+</li>
+<li><p>你可以尝试使用realm（第三方数据库），这个真的不错。</p>
+</li>
+<li><p>项目很快就会达到65k方法，真的很快。此时可以求助Multidex。</p>
+</li>
+<li><p>RxJava是AsyncTask的最佳替代，而且它远不止于此。</p>
+</li>
+<li><p>Retrofit是最好用的网络库。</p>
+</li>
+<li><p>不要自己写Http客户端，可以用Volley或OkHttp。</p>
+</li>
+<li><p>使用RetroLambda缩减代码。</p>
+</li>
+<li><p>我能想到人生最cool的事，就是把RxJava、Retrofit和RetroLambda绑在一起。</p>
+</li>
+<li><p>EventBus挺好用，但我不会用太多，因为代码会变得很纠结。</p>
+</li>
+<li><p>通过功能分包，而不是通过层。</p>
+</li>
+<li><p>不要在UI线程中执行逻辑代码，不然可能会ANR。</p>
+</li>
+<li><p>使用Lint检查Layout层级可以帮你发现没用的View，兴许可以去掉。</p>
+</li>
+<li><p>使用Gradle以及默认项目结构。</p>
+</li>
+<li><p>把密码与敏感数据放在gradle.properties里。（译者注：或许更好的方式是把这些数据放在local.properties里，然后把这个文件加进.gitignore）</p>
+</li>
+<li><p>使用styles来避免在Layout文件中写重复代码。</p>
+</li>
+<li><p>不要让ViewGroup层级太多。（会过度绘制）</p>
+</li>
+<li><p>监控电量，充电时可以进行更多的数据更新，低电量时停止数据的自动更新。</p>
+</li>
+<li><p>可以尝试JobScheduler。</p>
+</li>
+<li><p>当系统缺少内存（而不是应用缺少内存）时，系统会调用onLowMemory()方法，所以OOM原则上无法避免。</p>
+</li>
+<li><p>使用Account Manager来提示登录所需的信息（用户名、邮箱、密码等）。</p>
+</li>
+<li><p>给方法一个明确的命名，要能顾名思义。</p>
+</li>
+<li><p>启动界面是应用带给用户的第一体验。</p>
+</li>
+<li><p>如果不需要启动界面，那不要无故添加。</p>
+</li>
+<li><p>保持colors.xml文件短而简单，只写基本颜色就行。</p>
+</li>
+<li><p>保持dimens.xml文件简单，之定义基本常量。</p>
+</li>
+<li><p>当要时常修改一个字符串时，使用StringBuffer或StringBuilder(后者不保证线程安全)。</p>
+</li>
+<li><p>为了避免内存泄露：不要在AsyncCallBack中保留View引用。</p>
+</li>
+<li><p>不要让静态对象持有View引用。</p>
+</li>
+<li><p>最好不要在集合框架中存储View，但你也可以使用WeakHashMap。</p>
+</li>
+<li><p>FlatBuffers是一个高效的跨平台的序列化类库，建议使用。</p>
+</li>
+<li><p>Serializable实现起来很方便，但性能是真的差。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+ 
+
   
     <article id="post-Android修改EditText下划线线颜色" class="article article-type-post" itemscope itemprop="blogPost">
   

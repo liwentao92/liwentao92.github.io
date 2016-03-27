@@ -4,18 +4,39 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Zero</title>
+  <title>Android开发心得整理 | Zero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="出错了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="原文链接：https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9
+在开发了几个项目之后我决定写篇文章分享一下一路走来的经验教训。
+
+在使用任何第三方库之前都要三思，这件事非常严肃。
+
+除非必须，不要使用数据库。
+
+你可以尝试使用realm（第三方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发心得整理">
+<meta property="og:url" content="http://yoursite.com/2016/03/27/Android开发心得整理/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="出错了">
-<meta property="og:updated_time" content="2016-03-13T09:17:47.915Z">
+<meta property="og:description" content="原文链接：https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9
+在开发了几个项目之后我决定写篇文章分享一下一路走来的经验教训。
+
+在使用任何第三方库之前都要三思，这件事非常严肃。
+
+除非必须，不要使用数据库。
+
+你可以尝试使用realm（第三方">
+<meta property="og:updated_time" content="2016-03-27T09:02:17.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zero">
-<meta name="twitter:description" content="出错了">
+<meta name="twitter:title" content="Android开发心得整理">
+<meta name="twitter:description" content="原文链接：https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9
+在开发了几个项目之后我决定写篇文章分享一下一路走来的经验教训。
+
+在使用任何第三方库之前都要三思，这件事非常严肃。
+
+除非必须，不要使用数据库。
+
+你可以尝试使用realm（第三方">
   
     <link rel="alternative" href="/atom.xml" title="Zero" type="application/atom+xml">
   
@@ -201,11 +222,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Android开发心得整理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2016-03-13T09:17:47.915Z" itemprop="datePublished">2016-03-13</time>
+      <a href="/2016/03/27/Android开发心得整理/" class="article-date">
+  	<time datetime="2016-03-27T03:30:14.000Z" itemprop="datePublished">2016-03-27</time>
 </a>
     </div>
   
@@ -214,9 +235,98 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android开发心得整理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>出错了</p>
+        <p>原文链接：<a href="https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9" target="_blank" rel="external">https://medium.com/@laanayabdrzak/android-development-some-of-the-best-practices-27722c685b6a#.x3b8wsvz9</a></p>
+<p>在开发了几个项目之后我决定写篇文章分享一下一路走来的经验教训。</p>
+<ul>
+<li><p>在使用任何第三方库之前都要三思，这件事非常严肃。</p>
+</li>
+<li><p>除非必须，不要使用数据库。</p>
+</li>
+<li><p>你可以尝试使用realm（第三方数据库），这个真的不错。</p>
+</li>
+<li><p>项目很快就会达到65k方法，真的很快。此时可以求助Multidex。</p>
+</li>
+<li><p>RxJava是AsyncTask的最佳替代，而且它远不止于此。</p>
+</li>
+<li><p>Retrofit是最好用的网络库。</p>
+</li>
+<li><p>不要自己写Http客户端，可以用Volley或OkHttp。</p>
+</li>
+<li><p>使用RetroLambda缩减代码。</p>
+</li>
+<li><p>我能想到人生最cool的事，就是把RxJava、Retrofit和RetroLambda绑在一起。</p>
+</li>
+<li><p>EventBus挺好用，但我不会用太多，因为代码会变得很纠结。</p>
+</li>
+<li><p>通过功能分包，而不是通过层。</p>
+</li>
+<li><p>不要在UI线程中执行逻辑代码，不然可能会ANR。</p>
+</li>
+<li><p>使用Lint检查Layout层级可以帮你发现没用的View，兴许可以去掉。</p>
+</li>
+<li><p>使用Gradle以及默认项目结构。</p>
+</li>
+<li><p>把密码与敏感数据放在gradle.properties里。（译者注：或许更好的方式是把这些数据放在local.properties里，然后把这个文件加进.gitignore）</p>
+</li>
+<li><p>使用styles来避免在Layout文件中写重复代码。</p>
+</li>
+<li><p>不要让ViewGroup层级太多。（会过度绘制）</p>
+</li>
+<li><p>监控电量，充电时可以进行更多的数据更新，低电量时停止数据的自动更新。</p>
+</li>
+<li><p>可以尝试JobScheduler。</p>
+</li>
+<li><p>当系统缺少内存（而不是应用缺少内存）时，系统会调用onLowMemory()方法，所以OOM原则上无法避免。</p>
+</li>
+<li><p>使用Account Manager来提示登录所需的信息（用户名、邮箱、密码等）。</p>
+</li>
+<li><p>给方法一个明确的命名，要能顾名思义。</p>
+</li>
+<li><p>启动界面是应用带给用户的第一体验。</p>
+</li>
+<li><p>如果不需要启动界面，那不要无故添加。</p>
+</li>
+<li><p>保持colors.xml文件短而简单，只写基本颜色就行。</p>
+</li>
+<li><p>保持dimens.xml文件简单，之定义基本常量。</p>
+</li>
+<li><p>当要时常修改一个字符串时，使用StringBuffer或StringBuilder(后者不保证线程安全)。</p>
+</li>
+<li><p>为了避免内存泄露：不要在AsyncCallBack中保留View引用。</p>
+</li>
+<li><p>不要让静态对象持有View引用。</p>
+</li>
+<li><p>最好不要在集合框架中存储View，但你也可以使用WeakHashMap。</p>
+</li>
+<li><p>FlatBuffers是一个高效的跨平台的序列化类库，建议使用。</p>
+</li>
+<li><p>Serializable实现起来很方便，但性能是真的差。</p>
+</li>
+</ul>
 
       
     </div>
@@ -224,6 +334,16 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/23/Android修改EditText下划线线颜色/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android修改EditText下划线线颜色</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -253,7 +373,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/about/index.html"></div>
+	<div class="ds-thread" data-thread-key="Android开发心得整理" data-title="Android开发心得整理" data-url="http://yoursite.com/2016/03/27/Android开发心得整理/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -299,7 +419,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
