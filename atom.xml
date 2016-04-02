@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-02T04:38:10.484Z</updated>
+  <updated>2016-04-02T04:56:56.053Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android Studio中的Button英文文本显示为大写的解决方法</title>
+    <link href="http://yoursite.com/2016/04/02/Android-Studio%E4%B8%AD%E7%9A%84Button%E8%8B%B1%E6%96%87%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%A4%A7%E5%86%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/04/02/Android-Studio中的Button英文文本显示为大写的解决方法/</id>
+    <published>2016-04-02T04:50:51.000Z</published>
+    <updated>2016-04-02T04:56:56.053Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大写还是小写-对于这个问题确实有点疑问，google了一下，也解决了。&quot;&gt;&lt;a href=&quot;#最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大写还是小写-对于这个问题确实有点疑问，google了一下，也解决了。&quot; class=&quot;headerlink&quot; title=&quot;最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大写还是小写,对于这个问题确实有点疑问，google了一下，也解决了。&quot;&gt;&lt;/a&gt;最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大写还是小写,对于这个问题确实有点疑问，google了一下，也解决了。&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;解决办法很简单，在Button的属性里加上android:textAllCaps=”false”就行了&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大写还是小写-对于这个问题确实有点疑问，google了一下，也解决了。&quot;&gt;&lt;a href=&quot;#最近在做项目中发现Button的文本中，英文字母全部显示为大写，不管text中写的是大
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>Android apk瘦身</title>
