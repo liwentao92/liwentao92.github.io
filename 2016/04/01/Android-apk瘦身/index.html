@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/01/Android-apk瘦身/index.html">
 <meta property="og:site_name" content="Zero">
 <meta property="og:description" content="最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结：">
-<meta property="og:updated_time" content="2016-04-01T16:35:04.398Z">
+<meta property="og:updated_time" content="2016-04-02T04:38:10.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android apk瘦身">
 <meta name="twitter:description" content="最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结：">
@@ -87,10 +87,10 @@ var _hmt = _hmt || [];
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
+						<li>菜单</li>
 						<li>Tags</li>
 						
-						<li>Links</li>
+						<li>链接</li>
 						
 						
 						<li>About</li>
@@ -251,8 +251,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结：<br><a id="more"></a></p>
-<h4 id="技术列表"><a href="#技术列表" class="headerlink" title="技术列表"></a>技术列表</h4><ul>
+        <h4 id="最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结："><a href="#最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结：" class="headerlink" title="最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结："></a>最近做完项目打包成apk后感觉项目有点大，于是在网上找了一些APK的瘦身方法，使用这些方法后APK果然减小了，现在对这些方法经验进行总结：</h4><a id="more"></a>
+<h4 id="技术列表"><a href="#技术列表" class="headerlink" title="技术列表"></a>技术列表</h4><blockquote>
+<ul>
 <li><p>lint检查</p>
 </li>
 <li><p>tiny图片处理</p>
@@ -262,15 +263,187 @@ var _hmt = _hmt || [];
 <li><p>微信资源压缩</p>
 </li>
 </ul>
-<p>lint检查清除冗余</p>
-<p>实践方式<br>Android Studio<br>Analyze -&gt; Run Inspection by Name<br>在对话框中分别输入</p>
+</blockquote>
+<h4 id="lint检查清除冗余"><a href="#lint检查清除冗余" class="headerlink" title="lint检查清除冗余"></a>lint检查清除冗余</h4><p>实践方式：</p>
+<blockquote>
+<p>Android Studio<br>Analyze -&gt; Run Inspection by Name</p>
+</blockquote>
+<p>在对话框中分别输入</p>
 <pre><code>unusedResources
 unused declaration
-</code></pre><p>结果：<br>可以发现多余的冗余文件如多余的图片，多余的代码等等，将这些多余的删除可以减少一点apk的体积。</p>
-<p>tiny图片处理：</p>
-<p><a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a><br>目前所知图片压缩效果最好的网站。压缩后的图片体积会减少好多非常不错。</p>
+</code></pre><p>结果：</p>
+<blockquote>
+<p>可以发现多余的冗余文件如多余的图片，多余的代码等等，将这些多余的删除可以减少一点apk的体积。</p>
+</blockquote>
+<h4 id="tiny图片处理："><a href="#tiny图片处理：" class="headerlink" title="tiny图片处理："></a>tiny图片处理：</h4><blockquote>
+<p> <a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a><br>目前所知图片压缩效果最好的网站。压缩后的图片体积会减少好多非常不错。</p>
+</blockquote>
 <p>在日常的开发中，如果去此网站挨个处理图片其实也是有困扰的。其实我们可以利用tiny提供的jar包做了个批量处理本地图片的tinyPIC gradle plugin。然后在build 中插入一个新的tinyPicPlugin task.遍历寻找项目res中以drawable开头的文件夹中的图片资源，调用tiny API进行压缩工作并替换原来的文件。</p>
-<p>tinyPIC插件适用于各个Android项目，下面的链接是一个开源了的tiny 插件,接入方法请参考：<br><a href="https://github.com/mogujie/TinyPIC_Gradle_Plugin" target="_blank" rel="external">https://github.com/mogujie/TinyPIC_Gradle_Plugin</a></p>
+<blockquote>
+<p> tinyPIC插件适用于各个Android项目，下面的链接是一个开源了的tiny 插件,接入方法请参考：<br><a href="https://github.com/mogujie/TinyPIC_Gradle_Plugin" target="_blank" rel="external">https://github.com/mogujie/TinyPIC_Gradle_Plugin</a></p>
+</blockquote>
+<h4 id="Proguard"><a href="#Proguard" class="headerlink" title="Proguard"></a>Proguard</h4><p>Proguard是编译时对java代码进行压缩，混淆，优化，预编译等操作的集成化工具。达到删除冗余，增加安全防护，减小大小的功效。在Android studio中的app的gradle可以以下配置：</p>
+<pre><code> buildTypes {
+    release {
+        // 不显示Log
+        buildConfigField &quot;boolean&quot;, &quot;LOG_DEBUG&quot;, &quot;false&quot;
+        //混淆
+        minifyEnabled true
+        //Zipalign优化
+        zipAlignEnabled true
+        //去除无效资源
+        shrinkResources true
+        //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明
+        proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;
+    }
+}
+</code></pre><p>开启混淆后有可能会报错，因此还要保持一些代码不能被混淆</p>
+<pre><code class="python"> #指定代码的压缩级别
+-optimizationpasses 5
+
+#包明不混合大小写
+-dontusemixedcaseclassnames
+
+#不去忽略非公共的库类
+-dontskipnonpubliclibraryclasses
+
+ #优化  不优化输入的类文件
+-dontoptimize
+
+ #预校验
+-dontpreverify
+
+ #混淆时是否记录日志
+-verbose
+
+ # 混淆时所采用的算法
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+
+#保护注解
+-keepattributes *Annotation*
+
+
+
+# 保持哪些类不被混淆
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class com.android.vending.licensing.ILicensingService
+#如果有引用v4包可以添加下面这行
+-keep public class * extends android.support.v4.app.Fragment
+
+
+#####################记录生成的日志数据,gradle build时在本项目根目录输出################
+
+#apk 包内所有 class 的内部结构
+-dump class_files.txt
+#未混淆的类和成员
+-printseeds seeds.txt
+#列出从 apk 中删除的代码
+-printusage unused.txt
+#混淆前后的映射
+-printmapping mapping.txt
+################混淆保护自己项目的部分代码以及引用的第三方jar包library#########################
+##-keep class com.zhy.autolayout.** { *; }
+-keep class com.mifly.audio.base.BaseActivity{*;}
+
+############混淆保护自己项目的部分代码以及引用的第三方jar包library-end##################
+
+-keep public class * extends android.view.View {
+    public &lt;init&gt;(android.content.Context);
+    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);
+    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);
+    public void set*(...);
+}
+
+#保持 native 方法不被混淆
+-keepclasseswithmembernames class * {
+    native &lt;methods&gt;;
+}
+
+#保持自定义控件类不被混淆
+-keepclasseswithmembers class * {
+    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);
+}
+
+#保持自定义控件类不被混淆
+-keepclasseswithmembers class * {
+    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);
+}
+#保持自定义控件类不被混淆
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+
+#保持 Parcelable 不被混淆
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+#保持 Serializable 不被混淆
+-keepnames class * implements java.io.Serializable
+
+#保持 Serializable 不被混淆并且enum 类也不被混淆
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient &lt;fields&gt;;
+    !private &lt;fields&gt;;
+    !private &lt;methods&gt;;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+#不混淆资源类
+-keepclassmembers class **.R$* {
+    public static &lt;fields&gt;;
+}
+-keep class **.R$*
+-keep class org.apache.http.**
+-keep class android.support.v7.widget.**{*;}
+-keep class android.support.design.**{*;}
+-keep public class android.support.v7.widget.LinearLayoutManager
+
+-keep public class * extends android.support.v7.widget.CardView$LayoutManager {
+    public &lt;init&gt;(...);
+}
+
+# support-v4
+-dontwarn android.support.v4.**
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+# support-v7
+-dontwarn android.support.v7.**
+-keep class android.support.v7.internal.** { *; }
+-keep interface android.support.v7.internal.** { *; }
+</code></pre>
+<blockquote>
+<p>自己的项目那个类报错就保持那个类不混淆。</p>
+</blockquote>
+<h4 id="微信资源压缩"><a href="#微信资源压缩" class="headerlink" title="微信资源压缩"></a>微信资源压缩</h4><p>apk代码运行时，是通过 code -&gt;R -&gt;res找到对应资源的。<br>而R -&gt;res的映射关系是打包时写在resources.arsc里的。<br>所以对生成的apk进行的操作如下：</p>
+<blockquote>
+<p>1.先解压缩包</p>
+<p>2.然后对res目录下的文件夹和文件进行名称替换</p>
+<p>3.同时修改resources.arsc里对应的R与资源的映射关系</p>
+<p>4.然后再打包签名生成新的apk</p>
+</blockquote>
+<p>微信资源压缩工具与业务代码无关，我们已经把这部分技术处理整合到打包系统里，推荐大家在发布你们的apk时加入微信资源压缩，效果杠杠的。</p>
+<p>微信Android资源混淆打包工具原理：<br><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&amp;mid=208135658&amp;idx=1&amp;sn=ac9bd6b4927e9e82f9fa14e396183a8f#rd" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&amp;mid=208135658&amp;idx=1&amp;sn=ac9bd6b4927e9e82f9fa14e396183a8f#rd</a></p>
+<p>github地址：<br><a href="https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md" target="_blank" rel="external">https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md</a></p>
+<blockquote>
+<p>github中已经告诉微信资源压缩的使用方法，感觉在Android stduio中使用最简单了，如果看不懂如何使用可以在它提供的源码中的例子有配置。</p>
+</blockquote>
+<p>使用以上方法还是很不错的，apk的体积确实小了很多。</p>
+<blockquote>
+<p>参考原文：<a href="http://blog.csdn.net/UsherFor/article/details/46827587" target="_blank" rel="external">http://blog.csdn.net/UsherFor/article/details/46827587</a></p>
+</blockquote>
 
       
     </div>
