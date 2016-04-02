@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/03/13/Android%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2016-04-02T04:59:48.539Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/04/02/Android-Studio%E4%B8%AD%E7%9A%84Button%E8%8B%B1%E6%96%87%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%A4%A7%E5%86%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2016-04-02T04:56:56.053Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2016/03/27/Android%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86/</loc>
     
     <lastmod>2016-03-29T12:46:59.887Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/03/13/Android%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2016-03-23T15:05:33.171Z</lastmod>
     
   </url>
   
