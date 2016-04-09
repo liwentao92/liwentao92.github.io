@@ -18,7 +18,7 @@ BottomSheet（https://github.com/soarcn/BottomSheet ）
 BottomSheet（https://github.com/soarcn/BottomSheet ）
 
 现在官方推出来了，当然是使用原生的好，然而使用过程中还是不如人意啊">
-<meta property="og:updated_time" content="2016-04-09T13:11:44.976Z">
+<meta property="og:updated_time" content="2016-04-09T13:15:33.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android BottomSheet控件用法及使用问题">
 <meta name="twitter:description" content="由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android Support Library 23.2 ，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。
@@ -312,7 +312,28 @@ tools:context=&quot;android.com.bottomsheets.MainActivity&quot;&gt;
 <h4 id="强调："><a href="#强调：" class="headerlink" title="强调："></a>强调：</h4><blockquote>
 <p>BottomSheet 点击展示的默认是折叠状态，不是完全展开状况，所有如果需要完全展开，请设置展开状况</p>
 </blockquote>
-<h4 id="BottomSheetDialog"><a href="#BottomSheetDialog" class="headerlink" title="BottomSheetDialog"></a>BottomSheetDialog</h4><blockquote>
+<p>回调：</p>
+<pre><code>// The View with the BottomSheetBehavio 
+View bottomSheet = coordinatorLayout.findViewById(R.id.bottom_sheet);
+BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheet));
+
+bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+    @Override
+public void onStateChanged(@NonNull View bottomSheet, int newState) {
+        if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+            text1.setText(&quot;Collapse Me!&quot;);
+} else {
+            text1.setText(&quot;Expand Me!&quot;);
+}
+    }
+
+    @Override
+public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+    }
+});
+}
+</code></pre><h4 id="BottomSheetDialog"><a href="#BottomSheetDialog" class="headerlink" title="BottomSheetDialog"></a>BottomSheetDialog</h4><blockquote>
 <p>BottomSheetBehavior将能帮你实现 常驻bottom sheet（ persistent bottom sheet）的场景, 但这个版本还提供了BottomSheetDialog 和 BottomSheetDialogFragment 来实现 modal bottom sheets的场景。只需要将AppCompatDialog 或者AppCompatDialogFragment分别替换成上述的两个控件，你就拥有了 bottom sheet 风格的对话框。</p>
 </blockquote>
 <h4 id="使用问题1："><a href="#使用问题1：" class="headerlink" title="使用问题1："></a>使用问题1：</h4><p>然而我们实际我们需要BottomSheetDialog 是展开的，而BottomSheetDialog只展示一部分<br>原因：BottomSheetDialog默认是STATE_COLLAPSED，所有BottomSheetDialog 依靠peekHight来设置高度，系统BottomSheetDialog 默认高度为256dp（查源码得知）,那按理来说我们的BottomSheetDialog 高度该是256dp，但是我们实际发现BottomSheetDialog高度也不等于256dp。我们研究下BottomSheetBehavior的中控制BottomSheetDialog高度源码:</p>
