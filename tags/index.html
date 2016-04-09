@@ -273,48 +273,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-          
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
-
-
-    <!-- Tag Cloud Page -->
-    <hr>
+           
+                <hr>
     <br>
     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
-
-    <p class="count"></p>
-
     <div class="tags">
         <a href="/tags/Android/" style="font-size: 35px; color: #000">Android</a> <a href="/tags/EditText/" style="font-size: 16px; color: #808080">EditText</a> <a href="/tags/rxandroid/" style="font-size: 16px; color: #808080">rxandroid</a> <a href="/tags/rxjava/" style="font-size: 16px; color: #808080">rxjava</a>
     </div>
@@ -332,6 +294,7 @@
         .category-list-item:hover a {
             color: gray;
             text-decoration: none;
+            font-weight: bold;
         }
         .category-list-count {
             margin-left: 2px;
@@ -350,32 +313,17 @@
         }
         .tags a {
             margin-right: 1em;
-            line-height: 65px;
             border-bottom: 1px solid gray;
+            line-height: 65px;
             white-space: nowrap;
         }
         .tags a:hover {
             border-bottom: 2px solid black;
-            text-decoration: none;
             font-style: italic;
-        }
-        #count > span {
-            margin: auto .2em;
-            font-weight: bold;
+            text-decoration: none;
         }
     </style>
-
-    <!-- Count tags and categories -->
-    <p id="count">
-            已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-            共计<span><script>document.write($(".tags > a").length)</script></span>个标签。
-    </p>
-    <script>
-        $('#count').appendTo('.count');
-    </script>
-
-
-          
+        
         
       
     </div>

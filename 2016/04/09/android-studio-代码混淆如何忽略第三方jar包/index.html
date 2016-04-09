@@ -282,7 +282,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-          
+           
         <p> 最近在打包混淆时，遇到一个问题，混淆编译都不出错，运行出错，一般遇到这种问题，肯定是在运行的地方有代码被混淆了，经过错误排查，发现是程序中用到第三方的jar包的方法出现问题了，原来android studio混淆打包时把第三方的jar包给混淆了。</p>
 <p>于是想这个问题很简单，保持jar包不混淆就好，于是直接在app目录下的proguard-rules.pro(或者proguard-rules.txt)混淆规则文件直接-libraryjars libs/xx.jar避免混淆。但是却引出了另一个错误：</p>
 <blockquote>
