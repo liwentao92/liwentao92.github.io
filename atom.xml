@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-09T13:08:59.923Z</updated>
+  <updated>2016-04-09T13:11:44.976Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/04/09/Android-BottomSheet%E6%8E%A7%E4%BB%B6%E7%94%A8%E6%B3%95%E5%8F%8A%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2016/04/09/Android-BottomSheet控件用法及使用问题/</id>
     <published>2016-04-09T09:04:55.000Z</published>
-    <updated>2016-04-09T13:08:59.923Z</updated>
+    <updated>2016-04-09T13:11:44.976Z</updated>
     
     <content type="html">&lt;h4 id=&quot;由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android-Support-Library-23-2-，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。&quot;&gt;&lt;a href=&quot;#由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android-Support-Library-23-2-，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。&quot; class=&quot;headerlink&quot; title=&quot;由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android Support Library 23.2 ，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。&quot;&gt;&lt;/a&gt;由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android Support Library 23.2 ，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;BottomSheet（&lt;a href=&quot;https://github.com/soarcn/BottomSheet&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/soarcn/BottomSheet&lt;/a&gt; ）&lt;/p&gt;
@@ -30,8 +30,34 @@
 &lt;h4 id=&quot;BottomSheet-的使用：&quot;&gt;&lt;a href=&quot;#BottomSheet-的使用：&quot; class=&quot;headerlink&quot; title=&quot;BottomSheet 的使用：&quot;&gt;&lt;/a&gt;BottomSheet 的使用：&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;BottomSheet 使用需要CoordinatorLayout作为父布局，BottomSheet 的布局作为CoordinatorLayout 的子布局，并且BottomSheetBehavior（比如加上app:layout_behavior=”android.support.design.widget.BottomSheetBehavior”）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;android.support.design.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    android:layout_width=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    android:layout_height=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    android:fitsSystemWindows=&quot;true&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    tools:context=&quot;android.com.bottomsheets.MainActivity&quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;android.support.design.widget.AppBarLayout&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        android:layout_width=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        android:layout_height=&quot;wrap_content&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        android:theme=&quot;@style/AppTheme.AppBarOverlay&quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;android.support.v7.widget.Toolbar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            android:id=&quot;@+id/toolbar&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            android:layout_width=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            android:layout_height=&quot;?attr/actionBarSize&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            android:background=&quot;?attr/colorPrimary&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            app:popupTheme=&quot;@style/AppTheme.PopupOverlay&quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;/android.support.design.widget.AppBarLayout&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;include layout=&quot;@layout/content_main&quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;include layout=&quot;@layout/bottom_sheet_main&quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/android.support.design.widget.CoordinatorLayout&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;实际使用过程中主要依靠BottomSheetBehavior来控制BottomSheet的展示及回调。&lt;br&gt;BottomSheetBehavior 具有五种状态：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;android.support.design.widget.CoordinatorLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
+xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot;
+xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot;
+android:layout_width=&amp;quot;match_parent&amp;quot;
+android:layout_height=&amp;quot;match_parent&amp;quot;
+android:fitsSystemWindows=&amp;quot;true&amp;quot;
+tools:context=&amp;quot;android.com.bottomsheets.MainActivity&amp;quot;&amp;gt;
+
+&amp;lt;android.support.design.widget.AppBarLayout
+    android:layout_width=&amp;quot;match_parent&amp;quot;
+    android:layout_height=&amp;quot;wrap_content&amp;quot;
+    android:theme=&amp;quot;@style/AppTheme.AppBarOverlay&amp;quot;&amp;gt;
+
+    &amp;lt;android.support.v7.widget.Toolbar
+        android:id=&amp;quot;@+id/toolbar&amp;quot;
+        android:layout_width=&amp;quot;match_parent&amp;quot;
+        android:layout_height=&amp;quot;?attr/actionBarSize&amp;quot;
+        android:background=&amp;quot;?attr/colorPrimary&amp;quot;
+        app:popupTheme=&amp;quot;@style/AppTheme.PopupOverlay&amp;quot; /&amp;gt;
+
+&amp;lt;/android.support.design.widget.AppBarLayout&amp;gt;
+
+&amp;lt;include layout=&amp;quot;@layout/content_main&amp;quot; /&amp;gt;
+
+&amp;lt;include layout=&amp;quot;@layout/bottom_sheet_main&amp;quot; /&amp;gt;
+
+&amp;lt;/android.support.design.widget.CoordinatorLayout&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;实际使用过程中主要依靠BottomSheetBehavior来控制BottomSheet的展示及回调。&lt;br&gt;BottomSheetBehavior 具有五种状态：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;STATE_COLLAPSED&lt;/strong&gt; ：默认的折叠状态， bottom sheets只在底部显示一部分布局。显示高度可以通过 app:behavior_peekHeight 设置（默认是0）&lt;/li&gt;
@@ -76,8 +102,7 @@ public boolean onLayoutChild(CoordinatorLayout parent, V child, int layoutDirect
     mNestedScrollingChildRef = new WeakReference&amp;lt;&amp;gt;(findScrollingChild(child));
     return true;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;`&lt;/p&gt;
-&lt;p&gt;通过源码我们可以得知BottomSheetBehavior通过改变child的偏移量而控制BottomSheetDialog的高度，默认状态为STATE_COLLAPSED,child向下移动mMaxOffset高度，从而控制child显示高度为mPeekHeight,这就需要child与parent 顶部对齐，child的getTop 为0；&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过源码我们可以得知BottomSheetBehavior通过改变child的偏移量而控制BottomSheetDialog的高度，默认状态为STATE_COLLAPSED,child向下移动mMaxOffset高度，从而控制child显示高度为mPeekHeight,这就需要child与parent 顶部对齐，child的getTop 为0；&lt;/p&gt;
 &lt;p&gt;然而我们再去查看Android的BottomSheetDialog 内中布局R.layout.design_bottom_sheet_dialog,发现我们自定义的的BottomSheetDialog 的contentView 是放置在FrameLayout 中的，然而FrameLayout出于某些原因为垂直居中的，而不是顶部对齐，从而导致BottomSheetDialog在256dp的基础上向下偏移,只展示一部分。&lt;br&gt;所以我们可以通过下面方法解决BottomSheetDialog 的显示问题&lt;/p&gt;
 &lt;p&gt;解决方法如下：&lt;/p&gt;
 &lt;blockquote&gt;

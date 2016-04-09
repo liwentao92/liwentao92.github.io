@@ -18,7 +18,7 @@ BottomSheet（https://github.com/soarcn/BottomSheet ）
 BottomSheet（https://github.com/soarcn/BottomSheet ）
 
 现在官方推出来了，当然是使用原生的好，然而使用过程中还是不如人意啊">
-<meta property="og:updated_time" content="2016-04-09T13:08:59.923Z">
+<meta property="og:updated_time" content="2016-04-09T13:11:44.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android BottomSheet控件用法及使用问题">
 <meta name="twitter:description" content="由于项目需求需要，要使用底部弹出菜单的效果，正好看到了谷歌推出了Android Support Library 23.2 ，在更新的功能中就有BottomSheet这个控件，来实现底部弹出菜单的效果。而以前也有人写过这种效果。
@@ -268,8 +268,34 @@ var _hmt = _hmt || [];
 <h4 id="BottomSheet-的使用："><a href="#BottomSheet-的使用：" class="headerlink" title="BottomSheet 的使用："></a>BottomSheet 的使用：</h4><blockquote>
 <p>BottomSheet 使用需要CoordinatorLayout作为父布局，BottomSheet 的布局作为CoordinatorLayout 的子布局，并且BottomSheetBehavior（比如加上app:layout_behavior=”android.support.design.widget.BottomSheetBehavior”）</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"</span><br><span class="line">    xmlns:app="http://schemas.android.com/apk/res-auto"</span><br><span class="line">    xmlns:tools="http://schemas.android.com/tools"</span><br><span class="line">    android:layout_width="match_parent"</span><br><span class="line">    android:layout_height="match_parent"</span><br><span class="line">    android:fitsSystemWindows="true"</span><br><span class="line">    tools:context="android.com.bottomsheets.MainActivity"&gt;</span><br><span class="line"></span><br><span class="line">    &lt;android.support.design.widget.AppBarLayout</span><br><span class="line">        android:layout_width="match_parent"</span><br><span class="line">        android:layout_height="wrap_content"</span><br><span class="line">        android:theme="@style/AppTheme.AppBarOverlay"&gt;</span><br><span class="line"></span><br><span class="line">        &lt;android.support.v7.widget.Toolbar</span><br><span class="line">            android:id="@+id/toolbar"</span><br><span class="line">            android:layout_width="match_parent"</span><br><span class="line">            android:layout_height="?attr/actionBarSize"</span><br><span class="line">            android:background="?attr/colorPrimary"</span><br><span class="line">            app:popupTheme="@style/AppTheme.PopupOverlay" /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/android.support.design.widget.AppBarLayout&gt;</span><br><span class="line"></span><br><span class="line">    &lt;include layout="@layout/content_main" /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;include layout="@layout/bottom_sheet_main" /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span><br></pre></td></tr></table></figure>
-<p>实际使用过程中主要依靠BottomSheetBehavior来控制BottomSheet的展示及回调。<br>BottomSheetBehavior 具有五种状态：</p>
+<pre><code>&lt;android.support.design.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+android:fitsSystemWindows=&quot;true&quot;
+tools:context=&quot;android.com.bottomsheets.MainActivity&quot;&gt;
+
+&lt;android.support.design.widget.AppBarLayout
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:theme=&quot;@style/AppTheme.AppBarOverlay&quot;&gt;
+
+    &lt;android.support.v7.widget.Toolbar
+        android:id=&quot;@+id/toolbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;?attr/actionBarSize&quot;
+        android:background=&quot;?attr/colorPrimary&quot;
+        app:popupTheme=&quot;@style/AppTheme.PopupOverlay&quot; /&gt;
+
+&lt;/android.support.design.widget.AppBarLayout&gt;
+
+&lt;include layout=&quot;@layout/content_main&quot; /&gt;
+
+&lt;include layout=&quot;@layout/bottom_sheet_main&quot; /&gt;
+
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre><p>实际使用过程中主要依靠BottomSheetBehavior来控制BottomSheet的展示及回调。<br>BottomSheetBehavior 具有五种状态：</p>
 <blockquote>
 <ul>
 <li><strong>STATE_COLLAPSED</strong> ：默认的折叠状态， bottom sheets只在底部显示一部分布局。显示高度可以通过 app:behavior_peekHeight 设置（默认是0）</li>
@@ -314,8 +340,7 @@ public boolean onLayoutChild(CoordinatorLayout parent, V child, int layoutDirect
     mNestedScrollingChildRef = new WeakReference&lt;&gt;(findScrollingChild(child));
     return true;
 }
-</code></pre><p>`</p>
-<p>通过源码我们可以得知BottomSheetBehavior通过改变child的偏移量而控制BottomSheetDialog的高度，默认状态为STATE_COLLAPSED,child向下移动mMaxOffset高度，从而控制child显示高度为mPeekHeight,这就需要child与parent 顶部对齐，child的getTop 为0；</p>
+</code></pre><p>通过源码我们可以得知BottomSheetBehavior通过改变child的偏移量而控制BottomSheetDialog的高度，默认状态为STATE_COLLAPSED,child向下移动mMaxOffset高度，从而控制child显示高度为mPeekHeight,这就需要child与parent 顶部对齐，child的getTop 为0；</p>
 <p>然而我们再去查看Android的BottomSheetDialog 内中布局R.layout.design_bottom_sheet_dialog,发现我们自定义的的BottomSheetDialog 的contentView 是放置在FrameLayout 中的，然而FrameLayout出于某些原因为垂直居中的，而不是顶部对齐，从而导致BottomSheetDialog在256dp的基础上向下偏移,只展示一部分。<br>所以我们可以通过下面方法解决BottomSheetDialog 的显示问题</p>
 <p>解决方法如下：</p>
 <blockquote>
