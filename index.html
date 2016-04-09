@@ -86,10 +86,10 @@ var _hmt = _hmt || [];
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>菜单</li>
+						<li>Menu</li>
 						<li>Tags</li>
 						
-						<li>链接</li>
+						<li>Links</li>
 						
 						
 						<li>About</li>
@@ -214,6 +214,79 @@ var _hmt = _hmt || [];
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-android-studio-代码混淆如何忽略第三方jar包" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/android-studio-代码混淆如何忽略第三方jar包/" class="article-date">
+  	<time datetime="2016-04-09T06:27:47.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/android-studio-代码混淆如何忽略第三方jar包/">android studio 代码混淆如何忽略第三方jar包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 最近在打包混淆时，遇到一个问题，混淆编译都不出错，运行出错，一般遇到这种问题，肯定是在运行的地方有代码被混淆了，经过错误排查，发现是程序中用到第三方的jar包的方法出现问题了，原来android studio混淆打包时把第三方的jar包给混淆了。</p>
+<p>于是想这个问题很简单，保持jar包不混淆就好，于是直接在app目录下的proguard-rules.pro(或者proguard-rules.txt)混淆规则文件直接-libraryjars libs/xx.jar避免混淆。但是却引出了另一个错误：</p>
+<blockquote>
+<p>Error:Execution failed for task ‘:app:proguardRelease’.<br>java.io.IOException: The same input jar [E:\myproject\app\libs\XX.jar] is specified twice.<br>也就是说混淆规则文件中，我们指定了2次</p>
+</blockquote>
+<p>解决方法:</p>
+<blockquote>
+<p>打开app目录下的libs文件夹，将各第三方jar下的包名在proguard-rules.pro 文件中过滤。</p>
+</blockquote>
+<p><img src="./QQ图片20160409160009.png" alt="Alt text"></p>
+<p>code：</p>
+<blockquote>
+<p>-keep class audio.cutter.lib.<strong>{*;}<br>-keep class universal.initlibs.</strong>{*;}</p>
+</blockquote>
+<p>上面的代码以-keep class audio.cutter.lib.<em>*{</em>;} 为例，意思是不混淆com.baidu包下的各个类及类里面的所以域和方法。把上面的包名换成自己想要忽略的jar下面暴露的包名即可。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+ 
+
   
     <article id="post-Android-Studio中的Button英文文本显示为大写的解决方法" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -443,68 +516,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/03/23/Android修改EditText下划线线颜色/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
- 
-
-  
-    <article id="post-RX-Android学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/RX-Android学习/" class="article-date">
-  	<time datetime="2016-03-21T14:07:03.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/RX-Android学习/">RX Android学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先需要明确一个观点：Rx并不是一种新的语言，而是一种普通的Java模式，类似于观察者模式（Observer Pattern），可以将它看作一个普通的Java类库，因此你可以立即使用RxJava。而RxAndroid是RxJava的一个针对Android平台的扩展，主要用于 Android 开发。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxandroid/">rxandroid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxjava/">rxjava</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/21/RX-Android学习/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
