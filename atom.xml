@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-09T08:04:00.209Z</updated>
+  <updated>2016-04-09T08:48:26.870Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/04/09/android-studio-%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86%E5%A6%82%E4%BD%95%E5%BF%BD%E7%95%A5%E7%AC%AC%E4%B8%89%E6%96%B9jar%E5%8C%85/"/>
     <id>http://yoursite.com/2016/04/09/android-studio-代码混淆如何忽略第三方jar包/</id>
     <published>2016-04-09T06:27:47.000Z</published>
-    <updated>2016-04-09T08:04:00.209Z</updated>
+    <updated>2016-04-09T08:48:26.870Z</updated>
     
     <content type="html">&lt;p&gt; 最近在打包混淆时，遇到一个问题，混淆编译都不出错，运行出错，一般遇到这种问题，肯定是在运行的地方有代码被混淆了，经过错误排查，发现是程序中用到第三方的jar包的方法出现问题了，原来android studio混淆打包时把第三方的jar包给混淆了。&lt;/p&gt;
 &lt;p&gt;于是想这个问题很简单，保持jar包不混淆就好，于是直接在app目录下的proguard-rules.pro(或者proguard-rules.txt)混淆规则文件直接-libraryjars libs/xx.jar避免混淆。但是却引出了另一个错误：&lt;/p&gt;
@@ -31,7 +31,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;打开app目录下的libs文件夹，将各第三方jar下的包名在proguard-rules.pro 文件中过滤。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;./QQ图片20160409160009.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xsses.com2.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160409160009.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
 &lt;p&gt;code：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;-keep class audio.cutter.lib.&lt;strong&gt;{*;}&lt;br&gt;-keep class universal.initlibs.&lt;/strong&gt;{*;}&lt;/p&gt;
